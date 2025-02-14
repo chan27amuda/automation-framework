@@ -1,11 +1,12 @@
 package com.ui.pages;
 
+import static com.constants.Env.*;
+
 import org.openqa.selenium.By;
 
 import com.constants.Browser;
-import static com.constants.Env.*;
 import com.utility.BrowserUtility;
-import static com.utility.PropertiesUtil.*;
+import com.utility.JSONUtility;
 
 public final class HomePage extends BrowserUtility {
 
@@ -13,7 +14,7 @@ public final class HomePage extends BrowserUtility {
 
 	public HomePage(Browser browserName) {
 		super(browserName);// To call the Parent Class Constructor from the Child Constructor
-		goToWebsite(readProperty(QA, "URL"));
+		goToWebsite(JSONUtility.readJSON(QA).getUrl());
 	}
 
 	public LoginPage goToLoginPage() { // Page Functions

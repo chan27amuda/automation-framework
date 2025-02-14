@@ -15,7 +15,7 @@ public class JSONUtility {
 	 * The Job of JSONUtility Class file is to read the JSON File
 	 */
 
-	public static String readJSON(Env env) {
+	public static Environment readJSON(Env env) {
 
 		Gson gson = new Gson();
 		File jsonFile = new File(System.getProperty("user.dir") + "\\config\\config.json");
@@ -28,8 +28,8 @@ public class JSONUtility {
 
 		Config config = gson.fromJson(fileReader, Config.class);
 
-		Environment environment = config.getEnvironments().get(env);
-		return environment.getUrl();
+		Environment environment = config.getEnvironments().get("QA");
+		return environment;
 	}
 
 }
