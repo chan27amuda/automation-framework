@@ -14,14 +14,9 @@ import com.ui.pojo.User;
 import com.utility.LoggerUtility;
 
 @Listeners({ com.ui.listeners.TestListener.class })
-public class LoginTest {
+public class LoginTest extends TestBase {
 
-	HomePage homePage;
-
-	@BeforeMethod(description = "Load the Home Page of the Application")
-	public void setUp() {
-		homePage = new HomePage(EDGE);
-	}
+	Logger logger = LoggerUtility.getLogger(this.getClass());
 
 	@Test(description = "Verifies with the Valid User is able to login to the application", groups = { "e2e",
 			"sanity" }, dataProviderClass = com.ui.dataproviders.LoginDataProvider.class, dataProvider = "LoginTestDataProvider")
