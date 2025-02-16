@@ -1,15 +1,11 @@
 package com.ui.tests;
 
-import static com.constants.Browser.*;
-
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 import org.apache.logging.log4j.Logger;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.ui.pages.HomePage;
 import com.ui.pojo.User;
 import com.utility.LoggerUtility;
 
